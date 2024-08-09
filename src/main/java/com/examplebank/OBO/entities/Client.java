@@ -1,7 +1,5 @@
 package com.examplebank.OBO.entities;
 
-//import javax.persistence.*;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
@@ -23,26 +21,27 @@ import java.util.Set;
 @Setter
 @Entity
 public class Client {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private String name;
-    private LocalDate dateOfBirth;
+	private String name;
+	private LocalDate dateOfBirth;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "account_id", referencedColumnName = "id")
-    private BankingAccount account;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "account_id", referencedColumnName = "id")
+	private BankingAccount account;
 
-    @ElementCollection
-    @CollectionTable(name = "phone_numbers", joinColumns = @JoinColumn(name = "client_id"))
-    @Column(name = "phone")
-    private Set<String> phoneNumbers = new HashSet<>();
+	@ElementCollection
+	@CollectionTable(name = "phone_numbers", joinColumns = @JoinColumn(name = "client_id"))
+	@Column(name = "phone")
+	private Set<String> phoneNumbers = new HashSet<>();
 
-    @ElementCollection
-    @CollectionTable(name = "emails", joinColumns = @JoinColumn(name = "client_id"))
-    @Column(name = "email")
-    private Set<String> emails = new HashSet<>();
+	@ElementCollection
+	@CollectionTable(name = "emails", joinColumns = @JoinColumn(name = "client_id"))
+	@Column(name = "email")
+	private Set<String> emails = new HashSet<>();
 
-    // For Getters and Setters i used lombok
+	// For Getters and Setters i used lombok
+
 }
