@@ -11,13 +11,12 @@ import java.math.BigDecimal;
 @RequestMapping("/banking")
 public class BankingController {
 
-    @Autowired
-    private BankingService bankingService;
+	@Autowired
+	private BankingService bankingService;
 
-    @PostMapping("/transfer")
-    public void transferMoney(@RequestParam Long fromAccountId,
-                              @RequestParam Long toAccountId,
-                              @RequestParam BigDecimal amount) {
-        bankingService.transferMoney(fromAccountId, toAccountId, amount);
-    }
+	@PostMapping("/transfer")
+	public void transferMoney(@RequestParam Long fromAccountId,
+			@RequestParam Long toAccountId, @RequestParam BigDecimal amount) {
+		bankingService.transferMoney(fromAccountId, toAccountId, amount);
+	}    
 }

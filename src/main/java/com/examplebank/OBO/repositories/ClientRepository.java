@@ -10,9 +10,9 @@ import java.util.List;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
-    List<Client> findByDateOfBirthGreaterThanEqual(LocalDate dateOfBirth);
-    List<Client> findByPhoneNumbersContaining(String phone);
-    List<Client> findByNameStartingWith(String name);
-    List<Client> findByEmailsContaining(String email);
+	List<Client> findByDateOfBirthGreaterThanEqual(LocalDate dateOfBirth);
+	List<Client> findByPhoneNumbersContaining(String phone);
+	List<Client> findByNameStartingWith(String name);
+	List<Client> findByEmailsContaining(String email);
+	
 }
-

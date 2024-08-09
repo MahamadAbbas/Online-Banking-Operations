@@ -7,5 +7,6 @@ import com.examplebank.OBO.entities.BankingAccount;
 
 @Repository
 public interface BankingAccountRepository extends JpaRepository<BankingAccount, Long> {
+	
 }
 
